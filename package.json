@@ -1,9 +1,18 @@
 {
-    "name": "Barre Code",
-    "description": "Bare Code Application",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.x"
-    }
+  "name": "bookworm",
+  "version": "1.0.0",
+  "description": "Get your book collection in your pocket",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.2.0",
+    "mongoose": "^4.7.1",
+    "morgan": "^1.7.0"
+  }
 }
