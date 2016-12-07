@@ -8,6 +8,7 @@ var mongoose    = require('mongoose');
 // REQUIRE FILE
 var config = require('./config');
 var UserModel   = require('./models/user');
+var BookModel   = require('./models/book');
 
 // DEFINE APP
 var app         = express();
@@ -15,6 +16,7 @@ var app         = express();
 
 var apiRoutes 	= express.Router(); 
 var UserRoutes   = require('./routes/user');
+var BookRoutes   = require('./routes/book');
  
 
 // DB
@@ -106,11 +108,24 @@ apiRoutes.get('/users', function(req, res) {
   });
 });
 
+
 // Voir un utilisateur
 apiRoutes.get('/users/:id', UserRoutes.seeSingle);
 
 // Editer le mdp d'un utilisateur
 apiRoutes.put('/users/:id', UserRoutes.editUser);
+
+
+// voir tous les livres
+apiRoutes.get('/books', BookRoutes.seeAll);
+
+// ajouter un livre + l'insert dans la collection
+apiRoutes.post("/books", BookRoutes.addBook);
+
+// voir un livre en particulier
+apiRoutes.get("/books/:id", BookRoutes.seeSingle);
+
+
 
 app.use('/api', apiRoutes);
 
