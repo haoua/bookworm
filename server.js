@@ -36,6 +36,9 @@ app.use(morgan('dev'));
 // Ajouter un utilisateur (inscription, donc pas de token)
 app.post("/users", UserRoutes.addUser);
 
+app.get('/books', BookRoutes.seeAll);
+
+
 // Identifier un utilisateur, lui attribuer un token
 apiRoutes.post('/connect', function(req, res) {
   // find the user
